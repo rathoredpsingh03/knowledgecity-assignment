@@ -1,0 +1,171 @@
+Senior DevOps Test Task
+Scenario:
+KnowledgeCity provides a glo
+b
+ally accessib
+le educational platform consisting of the following
+components:
+1. Front-
+End:
+A Single Page Application (SPA) b
+uilt with React or Svelte, accessib
+le through a glo
+al
+b
+marketplace. Users from different regions (e.g., Saudi Ara
+bia and the United States) should
+have minimal latency when accessing content.
+2. Backend Services:
+Monolithic PHP Application: The main API handling core
+b
+usiness logic.
+Analytics Microservice (ClickHouse-
+b
+ased): Analyzes user interaction data
+and generates reports.
+Video Conversion/Encoding Microservice: Processes uploaded video files,
+converting them into optimal formats for glo
+b
+al delivery.
+Additional Microservices: You should consider an architecture that simplifies
+adding future microservices as the platform grows.
+3. Data Distrib
+ution and Multi-Regional Setup:
+Client data from Saudi Ara
+bia must
+b
+e stored and served in the Saudi Ara
+bia
+region.
+Client data from the U.S.
+must
+b
+e stored and served in the U.S.
+Educational courses created
+b
+y KnowledgeCity should
+b
+e glo
+b
+ally accessib
+le,
+potentially leveraging regional caching.
+The architecture should
+b
+e multi-regional and multi-availa
+bility zone to
+achieve high availa
+bility (99.99% SLA).
+4. Media (Video) Processing and Delivery:
+Upload of raw video files.
+Automated triggering of the video conversion microservice to produce various
+formats and qualities.
+
+Optimal storage strategies (choosing storage classes,
+caching) and glo
+al
+b
+video delivery via a CDN.
+5. Optimization and Scala
+bility:
+Automatic scaling of computational resources to handle load spikes.
+bility to easily add new regions,
+microservices, and data
+b
+ases as the
+b
+usiness grows.
+Cost optimization through choosing the right storage options,
+caching, and
+delivery methods.
+A
+Assignment:
+1.
+Architectural Design:
+Describ
+e the architecture considering all services (the monolith, analytics,
+video conversion, and potential future microservices), the frontend, and the
+data
+ases.
+b
+Show how you would implement multi-regional deployment:
+Saudi Ara
+bian users’ data resides in the Saudi Ara
+bian region.
+U.S. users’ data resides in the U.S. region.
+Explain how you will ensure multi-availa
+bility zone redundancy within each
+region to achieve high availa
+bility.
+Detail how glo
+b
+al content delivery (including video) will achieve minimal
+latency, for example, through CDNs and regionally distrib
+uted caches.
+Explain how the system will scale as traffic, user counts, and the num
+b
+er of
+microservices/regions grow.
+Justify your choice of infrastructural components (cloud providers, CDN,
+storage,
+data
+ases,
+b
+containerization,
+orchestration, etc.
+) b
+ased on relia
+bility,
+performance, and cost optimization.
+2. Security,
+O
+b
+serva
+bility, and Compliance:
+Describ
+e the security measures: access control,
+DDoS protection, WAF usage,
+data encryption at rest and in transit, secrets management, and role-
+ased
+b
+access controls.
+
+
+Explain how monitoring, logging, and tracing will
+b
+e integrated with security.
+Indicate which tools (e.g., Prometheus, Grafana,
+ELK/EFK stack,
+OpenTelemetry) you would use, which metrics/logs are critical, and how
+o
+b
+serva
+bility supports overall security and compliance goals.
+Describ
+e how you will detect anomalies,
+vulnera
+bilities, and ensure
+compliance with regional data regulations.
+Explain how the architecture can
+adapt to evolving regulatory requirements.
+Evaluation Criteria:
+bility to design a distrib
+uted,
+multi-regional, and multi-AZ architecture.
+Consideration of performance, glo
+b
+al content delivery, scala
+bility, security, and
+compliance.
+Understanding how o
+b
+serva
+bility (monitoring, logging) ties into the security posture,
+ena
+b
+ling proactive issue detection and resolution.
+Maturity in selecting tools and technologies that
+b
+alance cost, relia
+bility, and performance.
+A
